@@ -1,5 +1,5 @@
 from mwparserfromhell.nodes import Template
-from river_mwclient.wiki_time import WikiTime
+from mwrogue.wiki_time import WikiTime
 
 
 class Match(object):

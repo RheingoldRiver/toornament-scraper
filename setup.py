@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="toornament_scraper",
-    version="0.0.1",
+    version="0.0.2",
     author=" SeanDrum",
     author_email="",
     description="Toornament scraper for Leaguepedia MENA coverage",

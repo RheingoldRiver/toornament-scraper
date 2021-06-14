@@ -1,7 +1,7 @@
 from toornament_scraper.parser import Parser
-from river_mwclient.wiki_time_parser import time_from_str
-from river_mwclient.esports_client import EsportsClient
-from river_mwclient.auth_credentials import AuthCredentials
+from mwrogue.wiki_time_parser import time_from_str
+from mwrogue.esports_client import EsportsClient
+from mwrogue.auth_credentials import AuthCredentials
 from mwparserfromhell.nodes import Template
 
 

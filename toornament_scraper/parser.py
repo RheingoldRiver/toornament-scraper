@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from toornament_scraper.toornament_match import ToornamentMatch
-from river_mwclient.wiki_time_parser import time_from_str
+from mwrogue.wiki_time_parser import time_from_str
 
 
 class Parser(object):

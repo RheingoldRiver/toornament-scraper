@@ -1,5 +1,5 @@
 import mwparserfromhell
-from river_mwclient.esports_client import EsportsClient
+from mwrogue.esports_client import EsportsClient
 import requests
 from bs4 import BeautifulSoup
 from mwparserfromhell.nodes import Template
