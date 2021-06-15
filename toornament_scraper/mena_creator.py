@@ -1,8 +1,9 @@
-from toornament_scraper.parser import Parser
-from mwrogue.wiki_time_parser import time_from_str
-from mwrogue.esports_client import EsportsClient
-from mwrogue.auth_credentials import AuthCredentials
 from mwparserfromhell.nodes import Template
+from mwrogue.auth_credentials import AuthCredentials
+from mwrogue.esports_client import EsportsClient
+from mwrogue.wiki_time_parser import time_from_str
+
+from toornament_scraper.parser import Parser
 
 
 class MenaCreator(object):
@@ -15,10 +16,10 @@ class MenaCreator(object):
     * Split the data page in case it's too big
     * Label any tabs for playoffs etc
     """
-    
+
     heading = '== Day {} ==\n'
     outro = '{{MatchSchedule/End}}'
-    
+
     def __init__(self, site: EsportsClient, title: str, bestof=1):
         self.site = site
         self.event = self.site.target(title).strip()
@@ -48,9 +49,9 @@ class MenaCreator(object):
                 current_day_index += 1
             output_list.append(match.print())
         output_list.append(self.outro)
-        self.site.client.pages[self.sandbox_page].save('\n'.join(output_list))
+        self.site.save_title(self.sandbox_page, '\n'.join(output_list))
         return 'https://lol.gamepedia.com/' + self.sandbox_page.name.replace(' ', '_')
-    
+
     def get_intro(self, current_day_index: int):
         self.intro_template.add('tab', 'Day {}'.format(current_day_index), before="bestof")
         return self.heading.format(str(current_day_index)) + str(self.intro_template)
